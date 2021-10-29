@@ -23,8 +23,45 @@ public class Student {
         i++;
     }
 
+    void drop_course(int id){
+        Course[] d = new Course[5];
+        int j = 0;
+        for(int i=0;i<=this.i;i++) {
+            if (c[i] == null) {
+                continue;
+            }
+            else {
+                System.out.println(c[i].id);
+                if (id == c[i].id) {
+                    continue;
+                }
+                else {
+                    d[j] = c[i];
+                    j++;
+                }
+                c = d;
+            }
+        }
+
+    }
     void show(){
-        System.out.println("课表"+ Arrays.toString(c));
+        System.out.println("学生课表");
+        int k = 1;
+        for(int i=0;i<=this.i;i++) {
+            if (c[i] == null) {
+                continue;
+            }
+            else {
+                System.out.print("课程"+ k);
+                System.out.print(" 课程编号："+c[i].id);
+                System.out.print(" 授课教师："+c[i].teacher);
+                System.out.print(" 上课时间："+c[i].name);
+                System.out.print(" 上课地点："+c[i].place);
+                System.out.print(" 课程人数："+c[i].stu_num);
+                System.out.println(" 上课时间：周"+c[i].week +" "+ c[i].time);
+                k++;
+            }
+        }
     }
 
 }
