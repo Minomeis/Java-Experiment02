@@ -1,51 +1,33 @@
-package Class;
-
+package Testing;
 import java.util.Arrays;
 
-public class Student {
+public class Teacher {
     int id;
     String name;
     String sex;
-    int age;
     Course course;
     Course[] c = new Course[5];
     int i;
 
-    Student(int id,String name,String sex,int age){
+    Teacher(){};
+    Teacher(int id,String name){
+        this.id = id;
+        this.name = name;
+    }
+    Teacher(int id,String name,String sex){
         this.id = id;
         this.name = name;
         this.sex = sex;
-        this.age = age;
     }
     void add_course(Course cc){
         course = cc;
+        course.teacher = this.name;
         c[i] = course;
         i++;
     }
 
-    void drop_course(int id){
-        Course[] d = new Course[5];
-        int j = 0;
-        for(int i=0;i<=this.i;i++) {
-            if (c[i] == null) {
-                continue;
-            }
-            else {
-                //System.out.println(c[i].id);
-                if (id == c[i].id) {
-                    continue;
-                }
-                else {
-                    d[j] = c[i];
-                    j++;
-                }
-                c = d;
-            }
-        }
-
-    }
     void show(){
-        System.out.println("学生课表");
+        System.out.println(this.name+"的课表");
         int k = 1;
         for(int i=0;i<=this.i;i++) {
             if (c[i] == null) {
@@ -54,7 +36,6 @@ public class Student {
             else {
                 System.out.print("课程"+ k);
                 System.out.print(" 课程编号："+c[i].id);
-                System.out.print(" 授课教师："+c[i].teacher);
                 System.out.print(" 上课时间："+c[i].name);
                 System.out.print(" 上课地点："+c[i].place);
                 System.out.print(" 课程人数："+c[i].stu_num);
@@ -63,5 +44,4 @@ public class Student {
             }
         }
     }
-
 }

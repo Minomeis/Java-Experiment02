@@ -1,4 +1,4 @@
-package Class;
+package Testing;
 
 import java.util.Arrays;
 
@@ -17,7 +17,22 @@ public class Student {
         this.sex = sex;
         this.age = age;
     }
-    void add_course(Course cc){
+
+    void add_course(int class_id,Course[] C){
+        for(int a=0;a<=C.length;a++) {
+            if (C[a] == null) {
+                break;
+            } else {
+                if (class_id == C[a].id) {
+                    addcourse(C[a]);
+                    break;
+                } else {
+                    continue;
+                }
+            }
+        }
+    }
+    void addcourse(Course cc){
         course = cc;
         c[i] = course;
         i++;
@@ -31,7 +46,7 @@ public class Student {
                 continue;
             }
             else {
-                //System.out.println(c[i].id);
+                System.out.println(c[i].id);
                 if (id == c[i].id) {
                     continue;
                 }
